@@ -1,0 +1,54 @@
+.outer-div{
+	display: flex;
+	padding: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top:20px;
+	box-shadow: 2.98px 2.98px 2.98px 2.98px rgb(0,0,0,0.1);
+	overflow: hidden;
+}
+.item-div{
+	display: flex;
+	position: relative;
+	width: 100%;
+}
+
+.hide{
+	display: none;
+}
+
+.show{
+	display: block;
+}
+
+.deleteBtn{
+	background-color: red;
+	color: white;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.item-image{
+	margin: 0px;
+}
+
+.item-detail-div{
+	margin-left: 20px;
+}
+
+.item-detail-div > p{
+	margin: 0px;
+}
+
+.item-tag{
+	position: absolute;
+	right:0px;
+	padding: 10px;
+	background-color: aquamarine;
+	border-radius: 5px;
+}
+
+.item-tag > p{
+	margin: 0px;
+}
