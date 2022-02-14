@@ -10,9 +10,24 @@ import ResultNav from './resultNav';
 import ResultsContent from './resultsContent';
 import React from "react"
 export default function Setup() {
-	const [components, setComponents] = React.useState(Data)
-	const [formData, setFormData] = React.useState({company: "", model: "", made: "", price: ""})
-	const [totalAmount, setTotalAmount] = React.useState(0)
+	const [components, setComponents] = React.useState([]);
+	React.useEffect(function() {
+		console.log("Featch components");
+        fetch("api/costs/")
+            .then(res => res.json())
+            .then(data =>{
+				let temp = [];
+				console.log("data",data);
+				data.map(i => {
+					let temp2 = {"id":i.id, "quantity":0, "name":i.description, "prince":i.amount};
+					temp.push(temp2);
+				})
+				console.log(temp);
+				setComponents(temp);
+			})
+    }, [])
+	const [formData, setFormData] = React.useState({company: "", model: "", made: "", price: ""});
+	const [totalAmount, setTotalAmount] = React.useState(0);
 	return (
 		<Router>
 			<Switch>
@@ -31,7 +46,7 @@ export default function Setup() {
 				<Route exact path="/addComponents" >
 					<Nav2 url="/addComponents"/>
 					<Header title="ADD Components" />
-					<AddComponents components={components} setComponents={setComponents} />
+					<AddComponents components={components} setComponents={setComponents}/>
 				</Route>
 
 				<Route exact path="/result" >

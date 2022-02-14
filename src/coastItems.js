@@ -1,3 +1,4 @@
+import React, { Component }  from 'react';
 export default function CoastItems(props) {
 
 	var totalAmount = 0;

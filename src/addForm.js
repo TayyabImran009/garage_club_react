@@ -3,6 +3,7 @@ import React from "react";
 import CoastItems from "./coastItems";
 import { Link } from 'react-router-dom';
 import { useLocation, useParams } from 'react-router-dom/cjs/react-router-dom.min';
+import {TextField} from '@material-ui/core';
 export default function AddForm(props) {
 
     function handleChange(event) {
@@ -12,6 +13,7 @@ export default function AddForm(props) {
                 [event.target.name]: event.target.value
             }
         })
+        console.log(props.formData);
     }
 
     
@@ -55,9 +57,12 @@ export default function AddForm(props) {
        
       </div>
       <div className="inputFieldInput">
-        <input placeholder="Enter Price" type="text" onChange={handleChange} name="price" value={props.formData.price}></input>
+        {/* <input placeholder="Enter Price" type="text" onChange={handleChange} name="price" value={props.formData.price}></input> */}
+        <TextField id="standard-basic" label="Enter Price" type="text" onChange={handleChange} name="price" value={props.formData.price} variant="standard" />
       </div>
     </div>
+
+    
     {fromAddComponents && <CoastItems components={props.components} setTotalAmount = {props.setTotalAmount} /> }
     <Link to="/addComponents"><input className='submitBtn' type="button" value="ADD COSTES"></input></Link>
 

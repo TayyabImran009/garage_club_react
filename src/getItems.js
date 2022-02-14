@@ -6,18 +6,19 @@ export default function GetItems() {
 
     const [validation, setvalidation] = React.useState([]);
     const [temp, setTemp] = React.useState(validation);
-    React.useEffect(function() {
-        console.log("Effect ran")
-        fetch("api/validations/")
-            .then(res => res.json())
-            .then(data => setvalidation(data))
-    }, [])
 
     React.useEffect(function() {
         console.log("Effect ran2")
         fetch("api/validations/")
             .then(res => res.json())
             .then(data => setTemp(data))
+    }, [])
+
+    React.useEffect(function() {
+        console.log("Effect ran")
+        fetch("api/validations/")
+            .then(res => res.json())
+            .then(data => setvalidation(data))
     }, [])
     const itemObj = temp.map(i => {
         if(i){
@@ -26,7 +27,6 @@ export default function GetItems() {
             }
         }
     })
-
     function handleChange(event) {
         const m = event.target.value;
         let hold = []
@@ -41,8 +41,6 @@ export default function GetItems() {
             setTemp(hold);
         }
     }
-
-    
     return (
         <div>
             <div className="header-div">
