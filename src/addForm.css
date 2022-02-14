@@ -122,3 +122,16 @@ input:focus{
 	text-align: right;
 	margin-right: 10px;
 }
+
+
+.MuiTextField-root{
+	width: 100% !important;
+}
+
+.MuiSelect-icon{
+	display: none !important;
+}
+
+.matrialDropDownForm{
+	margin-right: 10px !important;
+}

@@ -6,9 +6,9 @@ import Setup from './setup';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
 ReactDOM.render(
-  <React.StrictMode>
-      <Setup />
-  </React.StrictMode>,
+  
+      <Setup />,
+
   document.getElementById('root')
 );
 

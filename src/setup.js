@@ -26,7 +26,7 @@ export default function Setup() {
 				setComponents(temp);
 			})
     }, [])
-	const [formData, setFormData] = React.useState({company: "", model: "", made: "", price: ""});
+	const [formData, setFormData] = React.useState({reference: "", makeNmade: "", purchase: "", selling: "", type:"", risk:""});
 	const [totalAmount, setTotalAmount] = React.useState(0);
 	return (
 		<Router>

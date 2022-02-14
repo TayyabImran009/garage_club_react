@@ -12,6 +12,14 @@
 
 }
 
+.resultHeaderIner-div-pink{
+	display: flex;
+	text-align: center;
+	background-color:pink;
+	padding:10px;
+	color:white;
+}
+
 .resultHeaderIner-div>i{
 	padding-top: 10px;
 	color:white;
