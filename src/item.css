@@ -52,3 +52,7 @@
 .item-tag > p{
 	margin: 0px;
 }
+
+.swipe-to-delete .js-delete{
+	background: none !important;
+}

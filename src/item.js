@@ -1,6 +1,10 @@
 import './item.css';
 import React from "react"
 
+import SwipeToDelete from 'react-swipe-to-delete-component';
+// Import styles of the react-swipe-to-delete-component
+import 'react-swipe-to-delete-component/dist/swipe-to-delete.css';
+
 export default function Item(props) {
 
 
@@ -12,7 +16,7 @@ function deleteItemBtn(event){
 }
 
 function DeleteBtn(){
-	console.log("clicked",props.id)
+	console.log("Swiped",props.id)
 	// fetch('api/validations/'+props.id, { method: 'DELETE' })
 
 	props.setvalidation(preData=>{
@@ -33,18 +37,20 @@ function DeleteBtn(){
 }
 
   return (
-	<div className="outer-div">
-		<div className="item-div" onClick={deleteItemBtn}>
-			<h1 className="item-image">1</h1>
-			<div className="item-detail-div">
-				<p>{props.keyNumber}</p>
-				<p>{props.detail}</p>
+	<SwipeToDelete key={props.id} onDelete={DeleteBtn} >
+		<div className="outer-div">
+			<div className="item-div">
+				<h1 className="item-image">1</h1>
+				<div className="item-detail-div">
+					<p>{props.keyNumber}</p>
+					<p>{props.detail}</p>
+				</div>
+				<div className="item-tag">
+					<p>{props.amount_sale}</p>
+				</div>
 			</div>
-			<div className="item-tag">
-				<p>{props.amount_sale}</p>
-			</div>
+			<button className="deleteBtn hide">Delete</button>
 		</div>
-		<button className="deleteBtn hide" onClick={DeleteBtn}>Delete</button>
-	</div>
+	</SwipeToDelete>
   );
 }
