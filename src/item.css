@@ -47,12 +47,28 @@
 	padding: 10px;
 	background-color: aquamarine;
 	border-radius: 5px;
+	min-width: 55px;
+	right:-10px
 }
 
 .item-tag > p{
 	margin: 0px;
 }
 
-.swipe-to-delete .js-delete{
+/* .swipe-to-delete .js-delete{
 	background: none !important;
+} */
+
+.jysSav{
+	background: none !important;
+}
+
+#delete{
+	background: none !important;
+	right: 17px;
+    top: 10px;
+}
+
+#delete-button{
+	color: red;
 }

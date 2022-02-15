@@ -4,7 +4,8 @@ import React from "react"
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 
-import SwipeToDelete from 'react-swipe-to-delete-component';
+// import SwipeToDelete from 'react-swipe-to-delete-component';
+import SwipeToDelete from 'react-swipe-to-delete-ios';
 // Import styles of the react-swipe-to-delete-component
 import 'react-swipe-to-delete-component/dist/swipe-to-delete.css';
 
@@ -42,10 +43,28 @@ function DeleteBtn(){
 }
 
   return (
-	<SwipeToDelete key={props.id} onDelete={DeleteBtn} >
+	<SwipeToDelete 
+	key={props.id} 
+	onDelete={DeleteBtn}
+	
+	height={100} // required
+	// optional
+	transitionDuration={250} // default
+	deleteWidth={75} // default
+	deleteColor="rgba(252, 58, 48, 1.00)" // default
+	deleteText="Delete" // default
+	// deleteComponent={<DeleteComponent/>} // not default
+	disabled={false} // default
+	rtl={false} // default
+	
+	>
 		<div className="outer-div">
 			<div className="item-div">
-				<h1 className="item-image">1</h1>
+				{props.risk == 1 ?
+					<h1 className="item-image">A</h1>:
+					<h1 className="item-image">B</h1>
+				}
+				
 				<div className="item-detail-div">
 					<p>{props.keyNumber}</p>
 					<p>{props.detail}</p>
