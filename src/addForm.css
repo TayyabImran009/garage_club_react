@@ -135,3 +135,18 @@ input:focus{
 .matrialDropDownForm{
 	margin-right: 10px !important;
 }
+
+.inputWithIcion{
+	position: relative;
+}
+
+.inputIcion{
+	position: absolute;
+	right: 20px;
+    top: 40%;
+	cursor: pointer;
+}
+
+.inputTcionChecked{
+	color: green;
+}

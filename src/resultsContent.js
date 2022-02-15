@@ -36,9 +36,21 @@ export default function ResultsContent(props) {
 
     <TextField id="standard-basic" label="Make and Made" type="text"  name="makeNmade" value={props.formData.makeNmade} variant="standard" disabled/>
 
-    <TextField id="standard-basic" label="Purchase Amount" type="number"  name="purchase" value={props.formData.purchase} variant="standard" disabled/>
+    <div className="inputWithIcion">
+      <TextField id="standard-basic" label="Purchase Amount" type="number"  name="purchase" value={props.formData.purchase} variant="standard" disabled/>
+      {props.inputIcion.purchase ? 
+      <i className="fa fa-check inputIcion inputTcionChecked" id="purchaseIcion" aria-hidden="true"></i> :
+      <i className="fa fa-check inputIcion" id="purchaseIcion" aria-hidden="true"></i>
+      }
+    </div>
 
-    <TextField id="standard-basic" label="Selling Amount" type="number"  name="selling" value={props.formData.selling} variant="standard" disabled/>
+    <div className="inputWithIcion">
+      <TextField id="standard-basic" label="Selling Amount" type="number"  name="selling" value={props.formData.selling} variant="standard" disabled/>
+      {props.inputIcion.sell ?
+        <i className="fa fa-check inputIcion inputTcionChecked" id="sellIcion" aria-hidden="true"></i>:
+        <i className="fa fa-check inputIcion" id="sellIcion" aria-hidden="true"></i>
+      }
+    </div>
 
     <FormControl className='matrialDropDownForm' variant="standard" sx={{ m: 1, minWidth: 120 }}>
         <InputLabel id="demo-simple-select-standard-label">Type</InputLabel >

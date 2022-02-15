@@ -10,6 +10,9 @@ import ResultNav from './resultNav';
 import ResultsContent from './resultsContent';
 import React from "react"
 export default function Setup() {
+
+	const [inputIcion, setinputIcion] = React.useState({"purchase":false,"sell":false});
+
 	const [components, setComponents] = React.useState([]);
 	React.useEffect(function() {
 		console.log("Featch components");
@@ -40,7 +43,7 @@ export default function Setup() {
 				<Route exact path="/add" >
 					<Nav2 url="/add" />
 					<Header title="ADD DATA" />
-					<AddForm components={components} setComponents={setComponents} formData={formData} setFormData={setFormData} setTotalAmount={setTotalAmount}/>
+					<AddForm components={components} setComponents={setComponents} formData={formData} setFormData={setFormData} setTotalAmount={setTotalAmount} inputIcion={inputIcion} setinputIcion={setinputIcion}/>
 				</Route>
 
 				<Route exact path="/addComponents" >
@@ -51,7 +54,7 @@ export default function Setup() {
 
 				<Route exact path="/result" >
 					<ResultNav/>
-					<ResultsContent components={components} setComponents={setComponents} formData={formData} setFormData={setFormData} setTotalAmount={setTotalAmount} totalAmount={totalAmount}/>
+					<ResultsContent components={components} setComponents={setComponents} formData={formData} setFormData={setFormData} setTotalAmount={setTotalAmount} totalAmount={totalAmount} inputIcion={inputIcion} setinputIcion={setinputIcion}/>
 				</Route>
 
 			</Switch>

@@ -1,6 +1,9 @@
 import './item.css';
 import React from "react"
 
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
+
 import SwipeToDelete from 'react-swipe-to-delete-component';
 // Import styles of the react-swipe-to-delete-component
 import 'react-swipe-to-delete-component/dist/swipe-to-delete.css';
@@ -10,10 +13,12 @@ export default function Item(props) {
 
 const itemDiv = document.querySelectorAll(".outer-div");
 
-function deleteItemBtn(event){
-	const targetDiv = event.currentTarget;
-	targetDiv.nextElementSibling.classList.toggle ('hide');
-}
+// function deleteItemBtn(event){
+// 	const targetDiv = event.currentTarget;
+// 	const dellBtn = document.getElementById("btnClicked");
+// 	console.log(dellBtn);
+// 	targetDiv.nextElementSibling.classList.toggle ('hide');
+// }
 
 function DeleteBtn(){
 	console.log("Swiped",props.id)
@@ -51,6 +56,12 @@ function DeleteBtn(){
 			</div>
 			<button className="deleteBtn hide">Delete</button>
 		</div>
+		{/* <Popup trigger={<button id="btnClicked"> Trigger</button>} position="right center">
+			<div>
+				<h1>Are you sure you want to delete ?</h1>
+				<button>Delete</button>
+			</div>
+		</Popup> */}
 	</SwipeToDelete>
   );
 }
