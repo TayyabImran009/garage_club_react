@@ -1,12 +1,13 @@
 import './nav.css';
-import React, { Component }  from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import 'reactjs-popup/dist/index.css';
 export default function Nav() {
   return (
     <div className="nav-div">
 	  <i className="fas fa-bars"></i>
 		<div className="nav-div-right-btn">
-			<Link to="/"><i className="fas fa-compress-alt"></i></Link>
+			<Link to="/sorting"><i className="fas fa-compress-alt"></i></Link>
 			<Link to={{
 				pathname: "/add",
 				state:{

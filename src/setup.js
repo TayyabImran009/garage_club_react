@@ -5,13 +5,16 @@ import Header from './header';
 import GetItems from './getItems';
 import AddForm from './addForm';
 import AddComponents from './addComponents';
-import Data from './componentsData';
+// import Data from './componentsData';
 import ResultNav from './resultNav';
 import ResultsContent from './resultsContent';
+import Sorting from './sorting';
 import React from "react"
 export default function Setup() {
 
 	const [inputIcion, setinputIcion] = React.useState({"purchase":false,"sell":false});
+
+	const [sorting, setSorting] = React.useState("price");
 
 	const [components, setComponents] = React.useState([]);
 	React.useEffect(function() {
@@ -38,7 +41,11 @@ export default function Setup() {
 				<Route exact path="/" >
 					<Nav url="/" />
 					<Header title="GET YOUR CAR" />
-					<GetItems />
+					<GetItems sorting={sorting}/>
+				</Route>
+
+				<Route exact path="/sorting" >
+					<Sorting url="/sorting" sorting={sorting} setSorting={setSorting}/>
 				</Route>
 
 				<Route exact path="/add" >

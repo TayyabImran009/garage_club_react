@@ -70,21 +70,22 @@ export default function AddForm(props) {
   return (
     <div className="addform">
 		<form>
-
-    <FormControl className='matrialDropDownForm' variant="standard" sx={{ m: 1, minWidth: 120 }}>
-        <InputLabel id="demo-simple-select-standard-label">Reference</InputLabel>
-        <Select
-          labelId="demo-simple-select-standard-label"
-          id="demo-simple-select-standard-typ"
-          value={props.valoracion}
-          onChange={handleValoracionChange}
-          label="reference"
-          name = "reference"
-        >
-          <MenuItem value="REBU">REBU</MenuItem>
-          <MenuItem value="IVA">IVA</MenuItem>
-        </Select>
-    </FormControl>
+    <div className="referanceInputDiv">
+    <p>Referance</p>
+      <FormControl className='matrialDropDownForm' variant="standard" sx={{ m: 1, minWidth: 120 }}>
+          <Select
+            labelId="demo-simple-select-standard-label"
+            id="demo-simple-select-standard-typ"
+            value={props.valoracion}
+            onChange={handleValoracionChange}
+            label="reference"
+            name = "reference"
+          >
+            <MenuItem value="REBU">REBU</MenuItem>
+            <MenuItem value="IVA">IVA</MenuItem>
+          </Select>
+      </FormControl>
+    </div>
 
     {/* <TextField id="standard-basic" label="Reference" type="text" onChange={handleChange} name="reference" value={props.formData.reference} variant="standard" /> */}
 

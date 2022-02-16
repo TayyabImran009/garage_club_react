@@ -2,7 +2,7 @@ import Data from './carsData'
 import Item from './item'
 import React from "react"
 
-export default function GetItems() {
+export default function GetItems(props) {
 
     const [validation, setvalidation] = React.useState([]);
     const [temp, setTemp] = React.useState(validation);
@@ -20,6 +20,17 @@ export default function GetItems() {
             .then(res => res.json())
             .then(data => setvalidation(data))
     }, [])
+
+    if(props.sorting == "margin"){
+        temp.sort(function(a, b) {
+            return b.margin - a.margin;
+          });
+    }else if(props.sorting == "price"){
+        temp.sort(function(a, b) {
+            return b.amount_purchase - a.amount_purchase;
+          });
+    }
+
     const itemObj = temp.map(i => {
         if(i){
             if(i.reference!=""){
@@ -41,6 +52,7 @@ export default function GetItems() {
             setTemp(hold);
         }
     }
+    
     return (
         <div>
             <div className="header-div">

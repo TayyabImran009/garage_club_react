@@ -150,3 +150,12 @@ input:focus{
 .inputTcionChecked{
 	color: green;
 }
+
+.referanceInputDiv{
+	display: flex !important;
+}
+
+.referanceInputDiv>p{
+	margin:0px;
+	margin-right: 20px;
+}
