@@ -29,7 +29,8 @@ export default function Setup() {
 				setComponents(temp);
 			})
     }, [])
-	const [formData, setFormData] = React.useState({reference: "", makeNmade: "", purchase: "", selling: "", type:"", risk:""});
+	const [formData, setFormData] = React.useState({makeNmade: "", purchase: "", selling: "", type:"", risk:""});
+	const [valoracion, setValoracion] = React.useState("REBU");
 	const [totalAmount, setTotalAmount] = React.useState(0);
 	return (
 		<Router>
@@ -43,7 +44,7 @@ export default function Setup() {
 				<Route exact path="/add" >
 					<Nav2 url="/add" />
 					<Header title="ADD DATA" />
-					<AddForm components={components} setComponents={setComponents} formData={formData} setFormData={setFormData} setTotalAmount={setTotalAmount} inputIcion={inputIcion} setinputIcion={setinputIcion}/>
+					<AddForm components={components} setComponents={setComponents} formData={formData} setFormData={setFormData} setTotalAmount={setTotalAmount} inputIcion={inputIcion} setinputIcion={setinputIcion} valoracion={valoracion} setValoracion={setValoracion}/>
 				</Route>
 
 				<Route exact path="/addComponents" >
@@ -54,7 +55,7 @@ export default function Setup() {
 
 				<Route exact path="/result" >
 					<ResultNav/>
-					<ResultsContent components={components} setComponents={setComponents} formData={formData} setFormData={setFormData} setTotalAmount={setTotalAmount} totalAmount={totalAmount} inputIcion={inputIcion} setinputIcion={setinputIcion}/>
+					<ResultsContent components={components} setComponents={setComponents} formData={formData} setFormData={setFormData} setTotalAmount={setTotalAmount} totalAmount={totalAmount} inputIcion={inputIcion} setinputIcion={setinputIcion} valoracion={valoracion}/>
 				</Route>
 
 			</Switch>

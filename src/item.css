@@ -45,19 +45,31 @@
 	position: absolute;
 	right:0px;
 	padding: 10px;
-	background-color: aquamarine;
 	border-radius: 5px;
 	min-width: 55px;
+	min-height: 35px;
 	right:-10px
 }
+
+.item-tag-green{
+	background-color: green;
+	color: white;
+}
+
+.item-tag-red{
+	background-color: red;
+	color: white;
+}
+
+.item-tag-black{
+	background-color: black;
+	color: white;
+}
+
 
 .item-tag > p{
 	margin: 0px;
 }
-
-/* .swipe-to-delete .js-delete{
-	background: none !important;
-} */
 
 .jysSav{
 	background: none !important;

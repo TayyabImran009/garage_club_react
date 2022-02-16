@@ -1,7 +1,5 @@
 import './item.css';
 import React from "react"
-
-import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 
 // import SwipeToDelete from 'react-swipe-to-delete-component';
@@ -11,15 +9,252 @@ import 'react-swipe-to-delete-component/dist/swipe-to-delete.css';
 
 export default function Item(props) {
 
-
-const itemDiv = document.querySelectorAll(".outer-div");
-
-// function deleteItemBtn(event){
-// 	const targetDiv = event.currentTarget;
-// 	const dellBtn = document.getElementById("btnClicked");
-// 	console.log(dellBtn);
-// 	targetDiv.nextElementSibling.classList.toggle ('hide');
-// }
+	let colorOfBaner = "green";
+	if(props.margin > 0){
+	if(props.amount_purchase < 1000){
+	  if(props.type == 0){
+		if(props.margin< 100){
+		  colorOfBaner = "red";
+		}else{
+		  colorOfBaner = "green";
+		}
+	  } else if(props.type == 1){
+		if(props.margin< 170){
+		  colorOfBaner = "red";
+		}else{
+		  colorOfBaner = "green";
+		}
+	  }else{
+		if(props.margin< 250){
+		  colorOfBaner = "red";
+		}else{
+		  colorOfBaner = "green";
+		}
+	  }
+	}else if(props.amount_purchase > 1000 && props.amount_purchase < 2000){
+	  if(props.type == 0){
+		if(props.margin< 43){
+		  colorOfBaner = "red";
+		}else{
+		  colorOfBaner = "green";
+		}
+	  } else if(props.type == 1){
+		if(props.margin< 74){
+		  colorOfBaner = "red";
+		}else{
+		  colorOfBaner = "green";
+		}
+	  }else{
+		if(props.margin< 108){
+		  colorOfBaner = "red";
+		}else{
+		  colorOfBaner = "green";
+		}
+	  }
+	}else if(props.amount_purchase > 2000 && props.amount_purchase < 4000){
+	  if(props.type == 0){
+		if(props.margin< 28){
+		  colorOfBaner = "red";
+		}else{
+		  colorOfBaner = "green";
+		}
+	  } else if(props.type == 1){
+		if(props.margin< 48){
+		  colorOfBaner = "red";
+		}else{
+		  colorOfBaner = "green";
+		}
+	  }else{
+		if(props.margin< 71){
+		  colorOfBaner = "red";
+		}else{
+		  colorOfBaner = "green";
+		}
+	  }
+	}else if(props.amount_purchase > 4000 && props.amount_purchase < 6000){
+	  if(props.type == 0){
+		if(props.margin< 24){
+		  colorOfBaner = "red";
+		}else{
+		  colorOfBaner = "green";
+		}
+	  } else if(props.type == 1){
+		if(props.margin< 41){
+		  colorOfBaner = "red";
+		}else{
+		  colorOfBaner = "green";
+		}
+	  }else{
+		if(props.margin< 60){
+		  colorOfBaner = "red";
+		}else{
+		  colorOfBaner = "green";
+		}
+	  }
+	}else if(props.amount_purchase > 6000 && props.amount_purchase < 8000){
+	  if(props.type == 0){
+		if(props.margin< 21){
+		  colorOfBaner = "red";
+		}else{
+		  colorOfBaner = "green";
+		}
+	  } else if(props.type == 1){
+		if(props.margin< 36){
+		  colorOfBaner = "red";
+		}else{
+		  colorOfBaner = "green";
+		}
+	  }else{
+		if(props.margin< 54){
+		  colorOfBaner = "red";
+		}else{
+		  colorOfBaner = "green";
+		}
+	  }
+	}else if(props.amount_purchase > 8000 && props.amount_purchase < 10000){
+	  if(props.type == 0){
+		if(props.margin< 19){
+		  colorOfBaner = "red";
+		}else{
+		  colorOfBaner = "green";
+		}
+	  } else if(props.type == 1){
+		if(props.margin< 33){
+		  colorOfBaner = "red";
+		}else{
+		  colorOfBaner = "green";
+		}
+	  }else{
+		if(props.margin< 49){
+		  colorOfBaner = "red";
+		}else{
+		  colorOfBaner = "green";
+		}
+	  }
+	}else if(props.amount_purchase > 10000 && props.amount_purchase < 12500){
+	  if(props.type == 0){
+		if(props.margin< 18){
+		  colorOfBaner = "red";
+		}else{
+		  colorOfBaner = "green";
+		}
+	  } else if(props.type == 1){
+		if(props.margin< 30){
+		  colorOfBaner = "red";
+		}else{
+		  colorOfBaner = "green";
+		}
+	  }else{
+		if(props.margin< 44){
+		  colorOfBaner = "red";
+		}else{
+		  colorOfBaner = "green";
+		}
+	  }
+	}else if(props.amount_purchase > 12500 && props.amount_purchase < 15000){
+	  if(props.type == 0){
+		if(props.margin< 17){
+		  colorOfBaner = "red";
+		}else{
+		  colorOfBaner = "green";
+		}
+	  } else if(props.type == 1){
+		if(props.margin< 28){
+		  colorOfBaner = "red";
+		}else{
+		  colorOfBaner = "green";
+		}
+	  }else{
+		if(props.margin< 42){
+		  colorOfBaner = "red";
+		}else{
+		  colorOfBaner = "green";
+		}
+	  }
+	}else if(props.amount_purchase > 15000 && props.amount_purchase < 20000){
+	  if(props.type == 0){
+		if(props.margin< 15){
+		  colorOfBaner = "red";
+		}else{
+		  colorOfBaner = "green";
+		}
+	  } else if(props.type == 1){
+		if(props.margin< 25){
+		  colorOfBaner = "red";
+		}else{
+		  colorOfBaner = "green";
+		}
+	  }else{
+		if(props.margin< 37){
+		  colorOfBaner = "red";
+		}else{
+		  colorOfBaner = "green";
+		}
+	  }
+	}else if(props.amount_purchase > 20000 && props.amount_purchase < 25000){
+	  if(props.type == 0){
+		if(props.margin< 16){
+		  colorOfBaner = "red";
+		}else{
+		  colorOfBaner = "green";
+		}
+	  } else if(props.type == 1){
+		if(props.margin< 26){
+		  colorOfBaner = "red";
+		}else{
+		  colorOfBaner = "green";
+		}
+	  }else{
+		if(props.margin< 39){
+		  colorOfBaner = "red";
+		}else{
+		  colorOfBaner = "green";
+		}
+	  }
+	}else if(props.amount_purchase > 25000 && props.amount_purchase < 30000){
+	  if(props.type == 0){
+		if(props.margin< 15){
+		  colorOfBaner = "red";
+		}else{
+		  colorOfBaner = "green";
+		}
+	  } else if(props.type == 1){
+		if(props.margin< 25){
+		  colorOfBaner = "red";
+		}else{
+		  colorOfBaner = "green";
+		}
+	  }else{
+		if(props.margin< 36){
+		  colorOfBaner = "red";
+		}else{
+		  colorOfBaner = "green";
+		}
+	  }
+	}else{
+	  if(props.type == 0){
+		if(props.margin< 14){
+		  colorOfBaner = "red";
+		}else{
+		  colorOfBaner = "green";
+		}
+	  } else if(props.type == 1){
+		if(props.margin< 24){
+		  colorOfBaner = "red";
+		}else{
+		  colorOfBaner = "green";
+		}
+	  }else{
+		if(props.margin< 35){
+		  colorOfBaner = "red";
+		}else{
+		  colorOfBaner = "green";
+		}
+	  }
+	}
+	}else{
+		colorOfBaner = "black";
+	}
 
 function DeleteBtn(){
 	console.log("Swiped",props.id)
@@ -69,18 +304,22 @@ function DeleteBtn(){
 					<p>{props.keyNumber}</p>
 					<p>{props.detail}</p>
 				</div>
-				<div className="item-tag">
-					<p>{props.amount_sale}</p>
-				</div>
+				{props.margin < 0 ?
+					<div className="item-tag item-tag-black">
+						<p>{props.margin}</p>
+					</div>:
+					colorOfBaner == "red" ?
+					<div className="item-tag item-tag-red">
+						<p>{props.margin}</p>
+					</div>:
+					<div className="item-tag item-tag-green">
+						<p>{props.margin}</p>
+					</div>
+				}
+				
 			</div>
 			<button className="deleteBtn hide">Delete</button>
 		</div>
-		{/* <Popup trigger={<button id="btnClicked"> Trigger</button>} position="right center">
-			<div>
-				<h1>Are you sure you want to delete ?</h1>
-				<button>Delete</button>
-			</div>
-		</Popup> */}
 	</SwipeToDelete>
   );
 }

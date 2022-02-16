@@ -15,47 +15,53 @@ export default function AddForm(props) {
         })
     }
 
-    function handleIcionCheck(key){
-      if(key == "purchase"){
-        const purchaseIcion = document.getElementById("purchaseIcion");
-        if(purchaseIcion.classList.contains("inputTcionChecked")){
-          purchaseIcion.classList.remove("inputTcionChecked");
-          props.setinputIcion(prevValue => {
-            return{
-              purchase : false,
-              sell: prevValue.sell
-            }
-          });
-        }else{
-          purchaseIcion.classList.add("inputTcionChecked");
-          props.setinputIcion(prevValue => {
-            return{
-              purchase : true,
-              sell : prevValue.sell
-            }
-          });
-        }
-      }else{
-        const sellIcion = document.getElementById("sellIcion");
-        if(sellIcion.classList.contains("inputTcionChecked")){
-          sellIcion.classList.remove("inputTcionChecked");
-          props.setinputIcion(prevValue => {
-            return{
-              ...prevValue,
-              sell : false
-            }
-          });
-        }else{
-          sellIcion.classList.add("inputTcionChecked");
-          props.setinputIcion(prevValue => {
-            return{
-              ...prevValue,
-              sell : true
-            }
-          });
-        }
-      }
+    function handleValoracionChange(event){
+      props.setValoracion(prevData => {
+        return (event.target.value)
+      });
     }
+
+    // function handleIcionCheck(key){
+    //   if(key == "purchase"){
+    //     const purchaseIcion = document.getElementById("purchaseIcion");
+    //     if(purchaseIcion.classList.contains("inputTcionChecked")){
+    //       purchaseIcion.classList.remove("inputTcionChecked");
+    //       props.setinputIcion(prevValue => {
+    //         return{
+    //           purchase : false,
+    //           sell: prevValue.sell
+    //         }
+    //       });
+    //     }else{
+    //       purchaseIcion.classList.add("inputTcionChecked");
+    //       props.setinputIcion(prevValue => {
+    //         return{
+    //           purchase : true,
+    //           sell : prevValue.sell
+    //         }
+    //       });
+    //     }
+    //   }else{
+    //     const sellIcion = document.getElementById("sellIcion");
+    //     if(sellIcion.classList.contains("inputTcionChecked")){
+    //       sellIcion.classList.remove("inputTcionChecked");
+    //       props.setinputIcion(prevValue => {
+    //         return{
+    //           ...prevValue,
+    //           sell : false
+    //         }
+    //       });
+    //     }else{
+    //       sellIcion.classList.add("inputTcionChecked");
+    //       props.setinputIcion(prevValue => {
+    //         return{
+    //           ...prevValue,
+    //           sell : true
+    //         }
+    //       });
+    //     }
+    //   }
+    // }
 
     
     const location = useLocation()
@@ -65,24 +71,39 @@ export default function AddForm(props) {
     <div className="addform">
 		<form>
 
-    <TextField id="standard-basic" label="Reference" type="text" onChange={handleChange} name="reference" value={props.formData.reference} variant="standard" />
+    <FormControl className='matrialDropDownForm' variant="standard" sx={{ m: 1, minWidth: 120 }}>
+        <InputLabel id="demo-simple-select-standard-label">Reference</InputLabel>
+        <Select
+          labelId="demo-simple-select-standard-label"
+          id="demo-simple-select-standard-typ"
+          value={props.valoracion}
+          onChange={handleValoracionChange}
+          label="reference"
+          name = "reference"
+        >
+          <MenuItem value="REBU">REBU</MenuItem>
+          <MenuItem value="IVA">IVA</MenuItem>
+        </Select>
+    </FormControl>
+
+    {/* <TextField id="standard-basic" label="Reference" type="text" onChange={handleChange} name="reference" value={props.formData.reference} variant="standard" /> */}
 
     <TextField id="standard-basic" label="Make and Made" type="text" onChange={handleChange} name="makeNmade" value={props.formData.makeNmade} variant="standard" />
 
     <div className="inputWithIcion">
       <TextField id="standard-basic" label="Purchase Amount" type="number" onChange={handleChange} name="purchase" value={props.formData.purchase} variant="standard" />
-      {props.inputIcion.purchase ? 
-      <i className="fa fa-check inputIcion inputTcionChecked" id="purchaseIcion" onClick={() => handleIcionCheck("purchase")} aria-hidden="true"></i> :
-      <i className="fa fa-check inputIcion" id="purchaseIcion" onClick={() => handleIcionCheck("purchase")} aria-hidden="true"></i>
+      {props.valoracion == "REBU" ? 
+      <i className="fa fa-check inputIcion" id="purchaseIcion" aria-hidden="true"></i> :
+      <i className="fa fa-check inputIcion" id="purchaseIcion" aria-hidden="true"></i>
       }
       
     </div>
 
     <div className="inputWithIcion">
       <TextField id="standard-basic" label="Selling Amount" type="number" onChange={handleChange} name="selling" value={props.formData.selling} variant="standard" />
-      {props.inputIcion.sell ?
-        <i className="fa fa-check inputIcion inputTcionChecked" id="sellIcion" onClick={() => handleIcionCheck("sell")} aria-hidden="true"></i>:
-        <i className="fa fa-check inputIcion" id="sellIcion" onClick={() => handleIcionCheck("sell")} aria-hidden="true"></i>
+      {props.valoracion == "REBU" ?
+        <i className="fa fa-check inputIcion inputTcionChecked" id="sellIcion" aria-hidden="true"></i>:
+        <i className="fa fa-check inputIcion" id="sellIcion" aria-hidden="true"></i>
       }
     </div>
 
@@ -98,6 +119,7 @@ export default function AddForm(props) {
         >
           <MenuItem value="A">A</MenuItem>
           <MenuItem value="B">B</MenuItem>
+          <MenuItem value="C">C</MenuItem>
         </Select>
     </FormControl>
 
