@@ -29,6 +29,10 @@ export default function GetItems(props) {
         temp.sort(function(a, b) {
             return b.amount_purchase - a.amount_purchase;
           });
+    }else{
+        temp.sort(function(a, b) {
+            return b.created_at - a.created_at;
+          });
     }
 
     const itemObj = temp.map(i => {
