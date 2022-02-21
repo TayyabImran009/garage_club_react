@@ -49,7 +49,7 @@ export default function GetItems(props) {
             setTemp(validation);
         }else{
             validation.map((c) => {
-                if(c && c.model.includes(m)){
+                if(c && c.reference.includes(m)){
                     hold.push(c);
                 }
             })

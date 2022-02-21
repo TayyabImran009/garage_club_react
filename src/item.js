@@ -306,14 +306,14 @@ function DeleteBtn(){
 				</div>
 				{props.margin < 0 ?
 					<div className="item-tag item-tag-black">
-						<p>{props.margin}</p>
+						<p>{parseFloat(props.margin).toFixed(2)}</p>
 					</div>:
 					colorOfBaner == "red" ?
 					<div className="item-tag item-tag-red">
-						<p>{props.margin}</p>
+						<p>{parseFloat(props.margin).toFixed(2)}</p>
 					</div>:
 					<div className="item-tag item-tag-green">
-						<p>{props.margin}</p>
+						<p>{parseFloat(props.margin).toFixed(2)}</p>
 					</div>
 				}
 				
