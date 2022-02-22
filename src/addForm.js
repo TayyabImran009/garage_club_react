@@ -2,7 +2,7 @@ import './addForm.css';
 import React from "react";
 import CoastItems from "./coastItems";
 import { Link } from 'react-router-dom';
-import { useLocation, useParams } from 'react-router-dom/cjs/react-router-dom.min';
+import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 import {TextField,MenuItem,FormControl,Select,InputLabel} from '@material-ui/core';
 export default function AddForm(props) {
 
@@ -93,7 +93,7 @@ export default function AddForm(props) {
 
     <div className="inputWithIcion">
       <TextField id="standard-basic" label="Purchase Amount" type="number" onChange={handleChange} name="purchase" value={props.formData.purchase} variant="standard" />
-      {props.valoracion == "REBU" ? 
+      {props.valoracion === "REBU" ? 
       <i className="fa fa-check inputIcion" id="purchaseIcion" aria-hidden="true"></i> :
       <i className="fa fa-check inputIcion" id="purchaseIcion" aria-hidden="true"></i>
       }
@@ -102,7 +102,7 @@ export default function AddForm(props) {
 
     <div className="inputWithIcion">
       <TextField id="standard-basic" label="Selling Amount" type="number" onChange={handleChange} name="selling" value={props.formData.selling} variant="standard" />
-      {props.valoracion == "REBU" ?
+      {props.valoracion === "REBU" ?
         <i className="fa fa-check inputIcion inputTcionChecked" id="sellIcion" aria-hidden="true"></i>:
         <i className="fa fa-check inputIcion" id="sellIcion" aria-hidden="true"></i>
       }

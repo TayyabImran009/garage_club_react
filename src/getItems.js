@@ -1,4 +1,3 @@
-import Data from './carsData'
 import Item from './item'
 import React from "react"
 
@@ -21,11 +20,11 @@ export default function GetItems(props) {
             .then(data => setvalidation(data))
     }, [])
 
-    if(props.sorting == "margin"){
+    if(props.sorting === "margin"){
         temp.sort(function(a, b) {
             return b.margin - a.margin;
           });
-    }else if(props.sorting == "price"){
+    }else if(props.sorting === "price"){
         temp.sort(function(a, b) {
             return b.amount_purchase - a.amount_purchase;
           });
@@ -37,15 +36,15 @@ export default function GetItems(props) {
 
     const itemObj = temp.map(i => {
         if(i){
-            if(i.reference!=""){
-                return <Item keyNumber={i.reference} detail={i.model} key={i.id} amount_purchase={i.amount_purchase} amount_sale={i.amount_sale} id={i.id} risk={i.risk} margin={i.margin} setvalidation={setvalidation} validation={validation} setTemp={setTemp} type={i.type} margin={i.margin}/>
+            if(i.reference!==""){
+                return <Item keyNumber={i.reference} detail={i.model} key={i.id} amount_purchase={i.amount_purchase} amount_sale={i.amount_sale} id={i.id} risk={i.risk} margin={i.margin} setvalidation={setvalidation} validation={validation} setTemp={setTemp} type={i.type} />
             }
         }
     })
     function handleChange(event) {
         const m = event.target.value;
         let hold = []
-        if(m==""){
+        if(m===""){
             setTemp(validation);
         }else{
             validation.map((c) => {

@@ -1,5 +1,5 @@
 import './addComponents.css';
-import React, { Component }  from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 export default function AddComponents(props) {
 
@@ -14,7 +14,7 @@ export default function AddComponents(props) {
 	function handleSubtractClick(id){
 		props.setComponents(preData=>{
 			return preData.map((c) => {
-                return c.id === id && c.quantity != 0 ? {...c, quantity: c.quantity-1} : c
+                return c.id === id && c.quantity !== 0 ? {...c, quantity: c.quantity-1} : c
             })
 		})
 	}

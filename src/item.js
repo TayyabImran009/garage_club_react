@@ -12,13 +12,13 @@ export default function Item(props) {
 	let colorOfBaner = "green";
 	if(props.margin > 0){
 	if(props.amount_purchase < 1000){
-	  if(props.type == 0){
+	  if(props.type === 0){
 		if(props.margin< 100){
 		  colorOfBaner = "red";
 		}else{
 		  colorOfBaner = "green";
 		}
-	  } else if(props.type == 1){
+	  } else if(props.type === 1){
 		if(props.margin< 170){
 		  colorOfBaner = "red";
 		}else{
@@ -32,13 +32,13 @@ export default function Item(props) {
 		}
 	  }
 	}else if(props.amount_purchase > 1000 && props.amount_purchase < 2000){
-	  if(props.type == 0){
+	  if(props.type === 0){
 		if(props.margin< 43){
 		  colorOfBaner = "red";
 		}else{
 		  colorOfBaner = "green";
 		}
-	  } else if(props.type == 1){
+	  } else if(props.type === 1){
 		if(props.margin< 74){
 		  colorOfBaner = "red";
 		}else{
@@ -52,13 +52,13 @@ export default function Item(props) {
 		}
 	  }
 	}else if(props.amount_purchase > 2000 && props.amount_purchase < 4000){
-	  if(props.type == 0){
+	  if(props.type === 0){
 		if(props.margin< 28){
 		  colorOfBaner = "red";
 		}else{
 		  colorOfBaner = "green";
 		}
-	  } else if(props.type == 1){
+	  } else if(props.type === 1){
 		if(props.margin< 48){
 		  colorOfBaner = "red";
 		}else{
@@ -72,13 +72,13 @@ export default function Item(props) {
 		}
 	  }
 	}else if(props.amount_purchase > 4000 && props.amount_purchase < 6000){
-	  if(props.type == 0){
+	  if(props.type === 0){
 		if(props.margin< 24){
 		  colorOfBaner = "red";
 		}else{
 		  colorOfBaner = "green";
 		}
-	  } else if(props.type == 1){
+	  } else if(props.type === 1){
 		if(props.margin< 41){
 		  colorOfBaner = "red";
 		}else{
@@ -92,13 +92,13 @@ export default function Item(props) {
 		}
 	  }
 	}else if(props.amount_purchase > 6000 && props.amount_purchase < 8000){
-	  if(props.type == 0){
+	  if(props.type === 0){
 		if(props.margin< 21){
 		  colorOfBaner = "red";
 		}else{
 		  colorOfBaner = "green";
 		}
-	  } else if(props.type == 1){
+	  } else if(props.type === 1){
 		if(props.margin< 36){
 		  colorOfBaner = "red";
 		}else{
@@ -112,13 +112,13 @@ export default function Item(props) {
 		}
 	  }
 	}else if(props.amount_purchase > 8000 && props.amount_purchase < 10000){
-	  if(props.type == 0){
+	  if(props.type === 0){
 		if(props.margin< 19){
 		  colorOfBaner = "red";
 		}else{
 		  colorOfBaner = "green";
 		}
-	  } else if(props.type == 1){
+	  } else if(props.type === 1){
 		if(props.margin< 33){
 		  colorOfBaner = "red";
 		}else{
@@ -132,13 +132,13 @@ export default function Item(props) {
 		}
 	  }
 	}else if(props.amount_purchase > 10000 && props.amount_purchase < 12500){
-	  if(props.type == 0){
+	  if(props.type === 0){
 		if(props.margin< 18){
 		  colorOfBaner = "red";
 		}else{
 		  colorOfBaner = "green";
 		}
-	  } else if(props.type == 1){
+	  } else if(props.type === 1){
 		if(props.margin< 30){
 		  colorOfBaner = "red";
 		}else{
@@ -152,13 +152,13 @@ export default function Item(props) {
 		}
 	  }
 	}else if(props.amount_purchase > 12500 && props.amount_purchase < 15000){
-	  if(props.type == 0){
+	  if(props.type === 0){
 		if(props.margin< 17){
 		  colorOfBaner = "red";
 		}else{
 		  colorOfBaner = "green";
 		}
-	  } else if(props.type == 1){
+	  } else if(props.type === 1){
 		if(props.margin< 28){
 		  colorOfBaner = "red";
 		}else{
@@ -172,13 +172,13 @@ export default function Item(props) {
 		}
 	  }
 	}else if(props.amount_purchase > 15000 && props.amount_purchase < 20000){
-	  if(props.type == 0){
+	  if(props.type === 0){
 		if(props.margin< 15){
 		  colorOfBaner = "red";
 		}else{
 		  colorOfBaner = "green";
 		}
-	  } else if(props.type == 1){
+	  } else if(props.type === 1){
 		if(props.margin< 25){
 		  colorOfBaner = "red";
 		}else{
@@ -192,13 +192,13 @@ export default function Item(props) {
 		}
 	  }
 	}else if(props.amount_purchase > 20000 && props.amount_purchase < 25000){
-	  if(props.type == 0){
+	  if(props.type === 0){
 		if(props.margin< 16){
 		  colorOfBaner = "red";
 		}else{
 		  colorOfBaner = "green";
 		}
-	  } else if(props.type == 1){
+	  } else if(props.type === 1){
 		if(props.margin< 26){
 		  colorOfBaner = "red";
 		}else{
@@ -212,13 +212,13 @@ export default function Item(props) {
 		}
 	  }
 	}else if(props.amount_purchase > 25000 && props.amount_purchase < 30000){
-	  if(props.type == 0){
+	  if(props.type === 0){
 		if(props.margin< 15){
 		  colorOfBaner = "red";
 		}else{
 		  colorOfBaner = "green";
 		}
-	  } else if(props.type == 1){
+	  } else if(props.type === 1){
 		if(props.margin< 25){
 		  colorOfBaner = "red";
 		}else{
@@ -232,13 +232,13 @@ export default function Item(props) {
 		}
 	  }
 	}else{
-	  if(props.type == 0){
+	  if(props.type === 0){
 		if(props.margin< 14){
 		  colorOfBaner = "red";
 		}else{
 		  colorOfBaner = "green";
 		}
-	  } else if(props.type == 1){
+	  } else if(props.type === 1){
 		if(props.margin< 24){
 		  colorOfBaner = "red";
 		}else{
@@ -261,7 +261,7 @@ function DeleteBtn(){
 	fetch('api/validations/'+props.id, { method: 'DELETE' })
 	props.setvalidation(preData=>{
 		return preData.map((c) => {
-			if(c && c.id != props.id){
+			if(c && c.id !== props.id){
 				return c
 			}
 		})
@@ -269,7 +269,7 @@ function DeleteBtn(){
 
 	props.setTemp(preData=>{
 		return preData.map((c) => {
-			if(c && c.id != props.id){
+			if(c && c.id !== props.id){
 				return c
 			}
 		})
@@ -294,7 +294,7 @@ function DeleteBtn(){
 	>
 		<div className="outer-div">
 			<div className="item-div">
-				{props.risk == 1 ?
+				{props.risk === 1 ?
 					<h1 className="item-image">A</h1>:
 					<h1 className="item-image">B</h1>
 				}
@@ -307,7 +307,7 @@ function DeleteBtn(){
 					<div className="item-tag item-tag-black">
 						<p>{parseFloat(props.margin).toFixed(2)}</p>
 					</div>:
-					colorOfBaner == "red" ?
+					colorOfBaner === "red" ?
 					<div className="item-tag item-tag-red">
 						<p>{parseFloat(props.margin).toFixed(2)}</p>
 					</div>:

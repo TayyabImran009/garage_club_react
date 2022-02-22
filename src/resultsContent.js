@@ -6,7 +6,7 @@ import CoastItems from "./coastItems";
 import {TextField,MenuItem,FormControl,Select,InputLabel} from '@material-ui/core';
 export default function ResultsContent(props) {
   let margin = 0;
-  if(props.valoracion == "IVA"){
+  if(props.valoracion === "IVA"){
     let netMargin = props.formData.selling - props.formData.purchase;
     margin = Math.floor(netMargin - props.totalAmount);
   }else{
@@ -17,7 +17,7 @@ export default function ResultsContent(props) {
   let colorOfBaner = "green";
   if(margin > 0){
   if(props.formData.purchase < 1000){
-    if(props.formData.type == "A"){
+    if(props.formData.type === "A"){
       if(margin < 100){
         colorOfBaner = "red";
         console.log(colorOfBaner,"@@@@@@@@@@@@");
@@ -25,7 +25,7 @@ export default function ResultsContent(props) {
         colorOfBaner = "green";
         console.log(colorOfBaner,"@@@@@@@@@@@@");
       }
-    } else if(props.formData.type == "B"){
+    } else if(props.formData.type === "B"){
       if(margin < 170){
         colorOfBaner = "red";
       }else{
@@ -39,13 +39,13 @@ export default function ResultsContent(props) {
       }
     }
   }else if(props.formData.purchase > 1000 && props.formData.purchase < 2000){
-    if(props.formData.type == "A"){
+    if(props.formData.type === "A"){
       if(margin < 43){
         colorOfBaner = "red";
       }else{
         colorOfBaner = "green";
       }
-    } else if(props.formData.type == "B"){
+    } else if(props.formData.type === "B"){
       if(margin < 74){
         colorOfBaner = "red";
       }else{
@@ -59,13 +59,13 @@ export default function ResultsContent(props) {
       }
     }
   }else if(props.formData.purchase > 2000 && props.formData.purchase < 4000){
-    if(props.formData.type == "A"){
+    if(props.formData.type === "A"){
       if(margin < 28){
         colorOfBaner = "red";
       }else{
         colorOfBaner = "green";
       }
-    } else if(props.formData.type == "B"){
+    } else if(props.formData.type === "B"){
       if(margin < 48){
         colorOfBaner = "red";
       }else{
@@ -79,13 +79,13 @@ export default function ResultsContent(props) {
       }
     }
   }else if(props.formData.purchase > 4000 && props.formData.purchase < 6000){
-    if(props.formData.type == "A"){
+    if(props.formData.type === "A"){
       if(margin < 24){
         colorOfBaner = "red";
       }else{
         colorOfBaner = "green";
       }
-    } else if(props.formData.type == "B"){
+    } else if(props.formData.type === "B"){
       if(margin < 41){
         colorOfBaner = "red";
       }else{
@@ -99,13 +99,13 @@ export default function ResultsContent(props) {
       }
     }
   }else if(props.formData.purchase > 6000 && props.formData.purchase < 8000){
-    if(props.formData.type == "A"){
+    if(props.formData.type === "A"){
       if(margin < 21){
         colorOfBaner = "red";
       }else{
         colorOfBaner = "green";
       }
-    } else if(props.formData.type == "B"){
+    } else if(props.formData.type === "B"){
       if(margin < 36){
         colorOfBaner = "red";
       }else{
@@ -119,13 +119,13 @@ export default function ResultsContent(props) {
       }
     }
   }else if(props.formData.purchase > 8000 && props.formData.purchase < 10000){
-    if(props.formData.type == "A"){
+    if(props.formData.type === "A"){
       if(margin < 19){
         colorOfBaner = "red";
       }else{
         colorOfBaner = "green";
       }
-    } else if(props.formData.type == "B"){
+    } else if(props.formData.type === "B"){
       if(margin < 33){
         colorOfBaner = "red";
       }else{
@@ -139,13 +139,13 @@ export default function ResultsContent(props) {
       }
     }
   }else if(props.formData.purchase > 10000 && props.formData.purchase < 12500){
-    if(props.formData.type == "A"){
+    if(props.formData.type === "A"){
       if(margin < 18){
         colorOfBaner = "red";
       }else{
         colorOfBaner = "green";
       }
-    } else if(props.formData.type == "B"){
+    } else if(props.formData.type === "B"){
       if(margin < 30){
         colorOfBaner = "red";
       }else{
@@ -159,13 +159,13 @@ export default function ResultsContent(props) {
       }
     }
   }else if(props.formData.purchase > 12500 && props.formData.purchase < 15000){
-    if(props.formData.type == "A"){
+    if(props.formData.type === "A"){
       if(margin < 17){
         colorOfBaner = "red";
       }else{
         colorOfBaner = "green";
       }
-    } else if(props.formData.type == "B"){
+    } else if(props.formData.type === "B"){
       if(margin < 28){
         colorOfBaner = "red";
       }else{
@@ -179,13 +179,13 @@ export default function ResultsContent(props) {
       }
     }
   }else if(props.formData.purchase > 15000 && props.formData.purchase < 20000){
-    if(props.formData.type == "A"){
+    if(props.formData.type === "A"){
       if(margin < 15){
         colorOfBaner = "red";
       }else{
         colorOfBaner = "green";
       }
-    } else if(props.formData.type == "B"){
+    } else if(props.formData.type === "B"){
       if(margin < 25){
         colorOfBaner = "red";
       }else{
@@ -199,13 +199,13 @@ export default function ResultsContent(props) {
       }
     }
   }else if(props.formData.purchase > 20000 && props.formData.purchase < 25000){
-    if(props.formData.type == "A"){
+    if(props.formData.type === "A"){
       if(margin < 16){
         colorOfBaner = "red";
       }else{
         colorOfBaner = "green";
       }
-    } else if(props.formData.type == "B"){
+    } else if(props.formData.type === "B"){
       if(margin < 26){
         colorOfBaner = "red";
       }else{
@@ -219,13 +219,13 @@ export default function ResultsContent(props) {
       }
     }
   }else if(props.formData.purchase > 25000 && props.formData.purchase < 30000){
-    if(props.formData.type == "A"){
+    if(props.formData.type === "A"){
       if(margin < 15){
         colorOfBaner = "red";
       }else{
         colorOfBaner = "green";
       }
-    } else if(props.formData.type == "B"){
+    } else if(props.formData.type === "B"){
       if(margin < 25){
         colorOfBaner = "red";
       }else{
@@ -239,13 +239,13 @@ export default function ResultsContent(props) {
       }
     }
   }else{
-    if(props.formData.type == "A"){
+    if(props.formData.type === "A"){
       if(margin < 14){
         colorOfBaner = "red";
       }else{
         colorOfBaner = "green";
       }
-    } else if(props.formData.type == "B"){
+    } else if(props.formData.type === "B"){
       if(margin < 24){
         colorOfBaner = "red";
       }else{
@@ -278,7 +278,7 @@ export default function ResultsContent(props) {
           </div>
       </div>
       :
-      colorOfBaner == "red"?
+      colorOfBaner === "red"?
       <div className="resultHeaderIner-div-pink"> 
         <i className="fa fa-x" aria-hidden="true"></i>
           <div className="resultLabel">

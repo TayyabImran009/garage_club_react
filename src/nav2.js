@@ -1,10 +1,10 @@
 import './nav.css';
-import React, { Component }  from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 export default function Nav2(props) {
   return (
     <div className="nav-div">
-		{props.url == "/addComponents" ? 
+		{props.url === "/addComponents" ? 
 			<Link to={{
 				pathname: "/add",
 				state:{
@@ -14,7 +14,7 @@ export default function Nav2(props) {
 			<Link to="/"><i className="fa fa-caret-left fa-2x"></i></Link>
 		}
 
-		{props.url == "/addComponents" ? 
+		{props.url === "/addComponents" ? 
 			<div className="nav-div-right-btn">
 				<Link to={{
 					pathname: "/add",

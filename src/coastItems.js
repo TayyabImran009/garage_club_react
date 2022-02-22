@@ -1,9 +1,9 @@
-import React, { Component }  from 'react';
+import React from 'react';
 export default function CoastItems(props) {
 
 	var totalAmount = 0;
 	const itemObj = props.components.map(i => {
-		if(i.quantity != 0){
+		if(i.quantity !== 0){
 			totalAmount += (i.prince * i.quantity)
 			props.setTotalAmount(totalAmount)
 			return(

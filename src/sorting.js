@@ -1,5 +1,5 @@
 import './sorting.css';
-import React, { Component }  from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import 'reactjs-popup/dist/index.css';
 export default function Sorting(props) {
