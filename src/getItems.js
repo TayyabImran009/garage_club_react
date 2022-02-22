@@ -1,5 +1,7 @@
 import Item from './item'
+import './getItems.css';
 import React from "react"
+import {TextField} from '@material-ui/core';
 
 export default function GetItems(props) {
 
@@ -48,7 +50,8 @@ export default function GetItems(props) {
             setTemp(validation);
         }else{
             validation.map((c) => {
-                if(c && c.reference.includes(m)){
+                var re = new RegExp(m, 'i');
+                if(c && c.reference.match(re)){
                     hold.push(c);
                 }
             })
@@ -58,8 +61,8 @@ export default function GetItems(props) {
     
     return (
         <div>
-            <div className="header-div">
-                <input className="header-input" type="text" placeholder="Search by car" onChange={handleChange}/>
+            <div className="searchDiv">
+                <TextField id="standard-basic" label="Search" variant="standard" onChange={handleChange} />
             </div>
             {itemObj}
         </div>
