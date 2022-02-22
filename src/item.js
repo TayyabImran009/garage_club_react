@@ -258,8 +258,7 @@ export default function Item(props) {
 
 function DeleteBtn(){
 	console.log("Swiped",props.id)
-	// fetch('api/validations/'+props.id, { method: 'DELETE' })
-
+	fetch('api/validations/'+props.id, { method: 'DELETE' })
 	props.setvalidation(preData=>{
 		return preData.map((c) => {
 			if(c && c.id != props.id){
